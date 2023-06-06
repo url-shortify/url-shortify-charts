@@ -11,10 +11,18 @@ entries:
   url-shortify:
   - apiVersion: v2
     appVersion: v1.0.0
+    created: "2023-06-06T11:00:27.322947955Z"
+    digest: c9e4cb590550b8e0806d639733793be65d7d22fbd2880fa6039304e57786b793
+    name: url-shortify
+    urls:
+    - https://github.com/url-shortify/url-shortify-charts/releases/download/url-shortify-1.1.0/url-shortify-1.1.0.tgz
+    version: 1.1.0
+  - apiVersion: v2
+    appVersion: v1.0.0
     created: "2023-06-06T09:15:05.77653845Z"
     digest: 3a62d10db5e761a33b1cb09a09be61e6f31a016e7142aaa884d961b61b043fed
     name: url-shortify
     urls:
     - https://github.com/url-shortify/url-shortify-charts/releases/download/url-shortify-1.0.0/url-shortify-1.0.0.tgz
     version: 1.0.0
-generated: "2023-06-06T10:23:51.713922154Z"
+generated: "2023-06-06T11:00:27.322960355Z"
