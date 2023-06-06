@@ -1,0 +1,10 @@
+host:
+database:
+  host:
+  port: 5432
+  database:
+  credentials:
+    secretArn:
+serviceAccount:
+  roleArn:
+tags:

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}
+data:
+  PGHOST: "{{ .Values.database.host }}"
+  PGPORT: "{{ .Values.database.port }}"
+  PGDATABASE: "{{ .Values.database.database }}"
+  APP_HOST: "0.0.0.0"
+  APP_PORT: "3000"

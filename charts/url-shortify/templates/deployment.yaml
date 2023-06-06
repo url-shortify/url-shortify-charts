@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}
+  annotations:
+    configmap.reloader.stakater.com/reload: {{ .Release.Name }}
+    secret.reloader.stakater.com/reload: {{ .Release.Name }}
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: {{ .Release.Name }}
+  template:
+    metadata:
+      labels:
+        name: {{ .Release.Name }}
+    spec:
+      serviceAccountName: {{ .Release.Name }}
+      containers:
+        - name: {{ .Release.Name }}
+          image: ghcr.io/url-shortify/url-shortify:{{ .Chart.AppVersion }}
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: {{ .Release.Name }}-secrets
+              mountPath: "/mnt/{{ .Release.Name }}-secrets"
+              readOnly: true
+          envFrom:
+            - secretRef:
+                name: {{ .Release.Name }}
+            - configMapRef:
+                name: {{ .Release.Name }}
+      volumes:
+        - name: {{ .Release.Name }}-secrets
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: {{ .Release.Name }}
