@@ -4,8 +4,6 @@ repos:
     rev: v3.2.2
     hooks:
       - id: commitizen
-      - id: commitizen-branch
-        stages: [ push ]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
