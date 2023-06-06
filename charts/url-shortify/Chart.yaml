@@ -1,4 +1,4 @@
 apiVersion: v2
 name: url-shortify
-version: 1.1.0
-appVersion: "v1.0.0"
+version: 1.2.0
+appVersion: "v1.1.1"
